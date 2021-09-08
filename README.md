@@ -1,14 +1,20 @@
 # hugoblog-
-# 1.环境安装
-* 安装hugo
+# 1.Environmental installation
+* hugo
 * 1.https://gohugo.io/getting-started/installing/
-* 安装fortune
+* fortune
 ```
+#centos
 yum install fortune-mod
+
+#ubuntu
+sudo apt-get install -y fortune
 ```
 
-# 2.执行部署脚本
-执行 pushMyblog.sh 脚本会自动触发github action部署页面。
-通过 https://66418500.github.io/ 访问。
+# 2.The deployment scripts
+* pushMyblog.sh 
+* This script has two functions, one for generating static files. One for pushing to the remote repo. A .github/workflows/public.yml file used to deploy an automated build.
+
+*see it https://66418500.github.io/ 
 
 
