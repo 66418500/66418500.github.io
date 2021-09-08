@@ -1,7 +1,8 @@
 #!/bin/sh
 #Auther: huangguinan
 #Time: 2021/09/08
-#This script is used to automatically generate article content and upload it to my Github Pages page.
+#This script is used to automatically generate article content and upload it to my Github Pages space.
+#When code is pushed to the blog branch, Github actions are automatically built to deploy the generated public directory to the Master branch.
 set -e
 
 geneNewArchives(){
@@ -9,7 +10,7 @@ geneNewArchives(){
   title=`echo $content|awk 'NR==1{print $1}'|tr -dc '[:alnum:]'`
   hugo new post/$title.md
   echo $content >> content/post/$title.md
-  sed -i 's/draft: true/draft: false/g' content/post/$title.md
+  sed -i 's/draft: true/draft: false/g' content/post/$title.md 
 }
 
 pushTorepo(){
