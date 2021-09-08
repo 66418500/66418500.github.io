@@ -1,7 +1,7 @@
 # hugoblog-
 # 1.Environmental installation
 * hugo
-* 1.https://gohugo.io/getting-started/installing/
+* https://gohugo.io/getting-started/installing/
 * fortune
 ```
 #centos
