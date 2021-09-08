@@ -16,9 +16,9 @@ pushTorepo(){
   printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
   hugo -t jane # if using a theme, replace with `hugo -t <YOURTHEME>`
 
-  cd public && git add .
+  git add .
   msg="the new archive updating. $(date)"
-  git commit -m "$msg" && git push
+  git commit -m "$msg" && git push origin blog
   echo "\n" 
   printf "\033[0;32msee it  https://66418500.github.io/ \033[0m\n"
 }
