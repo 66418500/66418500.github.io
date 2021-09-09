@@ -7,6 +7,7 @@
 #When code is pushed to the blog branch, Github actions are automatically built to deploy the generated public directory to the Master branch.
 set -e
 
+
 geneNewArchives(){
   content=`fortune`
   title=`echo $content|awk 'NR==1{print $1}'|tr -dc '[:alnum:]'`
@@ -17,6 +18,11 @@ geneNewArchives(){
 
 pushTorepo(){
   printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
+
+  if [ ! -d "themes/jane/layouts" ];then
+    git clone https://github.com/xianmin/hugo-theme-jane.git --depth=1 themes/jane
+  fi
+
   hugo -t jane # if using a theme, replace with `hugo -t <YOURTHEME>`
 
   git add .
