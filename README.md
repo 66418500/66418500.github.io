@@ -19,3 +19,4 @@ sudo apt-get install -y fortune
 * visit the hugo page https://66418500.github.io/ 
 
 **pushMyblog.py**
+* see it https://github.com/66418500/66418500.github.io/blob/blog/pushMyblog.py
