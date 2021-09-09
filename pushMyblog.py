@@ -11,11 +11,6 @@ import subprocess
 import os
 import random
 
-# def initTheme():
-#     jane = '/themes/jane/.git'
-#     if not os.path.exists(jane): #Jane is also a repository and won't be uploaded to Github, so you'll need to reinstall the theme for the first time.
-#         os.system('git clone https://github.com/xianmin/hugo-theme-jane.git --depth=1 themes/jane')
-
 def main():
     content = subprocess.getstatusoutput('fortune')
     if content[0]!=0:
@@ -40,6 +35,5 @@ def main():
             print(e)
 
 if __name__ == "__main__":
-    #initTheme() #if you're first use this scripts,please excute this function first.
     main()
         
