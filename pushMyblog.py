@@ -18,8 +18,8 @@ def main():
     if content[0]==0:
         title="MyPost"+str(random.randint(0,1000))
         try:
-            os.system('hugo new post/{0}'.format(title))
-            with open('content/post/{0}'.format(title), 'r+') as f: #r+ reading and writing
+            os.system('hugo new post/{0}.md'.format(title))
+            with open('content/post/{0}.md'.format(title), 'r+') as f: #r+ reading and writing
                 file=f.read()
                 file=file.replace('draft: true','draft: false')
                 f.seek(0) #Initialize the position to the beginning
