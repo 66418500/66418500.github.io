@@ -1,6 +1,8 @@
 #!/bin/sh
 #Auther: huangguinan
 #Time: 2021/09/08
+#email: 3481203724@qq.com
+
 #This script is used to automatically generate article content and upload it to my Github Pages space.
 #When code is pushed to the blog branch, Github actions are automatically built to deploy the generated public directory to the Master branch.
 set -e

@@ -1,5 +1,12 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
+#auther: huangguinan
+#time: 2021/09/09
+#email: 3481203724@qq.com
+
+#This script is used to automatically generate article content and upload it to my Github Pages space.
+#When code is pushed to the blog branch, Github actions are automatically built to deploy the generated public directory to the Master branch.
+
 import subprocess
 import os
 import random
@@ -13,7 +20,6 @@ def main():
     content = subprocess.getstatusoutput('fortune')
     if content[0]!=0:
         print('Check whether the command fortune has been installed.')
-
     if content[0]==0:
         title="MyPost"+str(random.randint(0,1000))
         try:
