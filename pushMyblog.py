@@ -26,7 +26,7 @@ def main():
                 f.write(file)
                 f.write(content[1])
             
-            if not os.path.isdir("/themes/jane/layouts"): #Jane is also a repository and won't be uploaded to Github, so you'll need to reinstall the theme for the first time.
+            if not os.path.isdir("themes/jane/layouts"): #Jane is also a repository and won't be uploaded to Github, so you'll need to reinstall the theme for the first time.
                 os.system('git clone https://github.com/xianmin/hugo-theme-jane.git --depth=1 themes/jane')
             os.system('hugo  -t jane')
             os.system('git add .')
