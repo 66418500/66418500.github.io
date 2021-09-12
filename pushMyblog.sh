@@ -14,22 +14,19 @@ geneNewArchives(){
   hugo new post/$title.md
   echo $content >> content/post/$title.md
   sed -i 's/draft: true/draft: false/g' content/post/$title.md 
+  
+  if [ ! -d "themes/jane/layouts" ];then #Jane is also a Git repository, so it is not uploaded, and you will need to reinstall the theme if you use it for the first time
+    git clone https://github.com/xianmin/hugo-theme-jane.git --depth=1 themes/jane
+  fi
+  
+  hugo -t jane # if using a theme, replace with `hugo -t <YOURTHEME>`
 }
 
 pushTorepo(){
-  printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
-
-  if [ ! -d "themes/jane/layouts" ];then
-    git clone https://github.com/xianmin/hugo-theme-jane.git --depth=1 themes/jane
-  fi
-
-  hugo -t jane # if using a theme, replace with `hugo -t <YOURTHEME>`
   git add .
   msg="the new archive updating. $(date)"
   git commit -m "$msg" && git push origin blog
-  echo "\n" 
-  printf "\033[0;32msee it  https://66418500.github.io/ \033[0m\n"
-}
+  }
 
 
 geneNewArchives
