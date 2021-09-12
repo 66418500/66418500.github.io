@@ -10,7 +10,7 @@ set -e
 
 geneNewArchives(){
   content=`fortune`
-  title=`echo $content|awk 'NR==1{print $1}'|tr -dc '[:alnum:]'`
+  title=`echo $content|awk 'NR==1{print $1}'|tr -dc '[:alnum:]'`  #Just assume that the first field on the first line of the article is the title, with the symbol removed
   hugo new post/$title.md
   echo $content >> content/post/$title.md
   sed -i 's/draft: true/draft: false/g' content/post/$title.md 
