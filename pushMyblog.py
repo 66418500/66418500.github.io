@@ -12,13 +12,14 @@ import os
 import random
 
 def main():
-    content = subprocess.getstatusoutput('fortune')
-    if content[0]!=0:
+    content = subprocess.getstatusoutput('fortune') 
+    #The subprocess module returns two parameters, the execution status of the command and the content, exception if the status is not zero.
+    if content[0]!=0: 
         print('Check whether the command fortune has been installed.')
     if content[0]==0:
-        title="MyPost"+str(random.randint(0,1000))
+        title="MyPost"+str(random.randint(0,1000)) 
         try:
-            os.system('hugo new post/{0}.md'.format(title))
+            os.system('hugo new post/{0}.md'.format(title))  #There is no need to get the return content, so use the OS module directly
             with open('content/post/{0}.md'.format(title), 'r+') as f: #r+ reading and writing
                 file=f.read()
                 file=file.replace('draft: true','draft: false')
