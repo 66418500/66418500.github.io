@@ -29,9 +29,10 @@ def main():
             
             if not os.path.isdir("themes/jane/layouts"): #Jane is also a repository and won't be uploaded to Github, so you'll need to reinstall the theme for the first time.
                 os.system('git clone https://github.com/xianmin/hugo-theme-jane.git --depth=1 themes/jane')
-            os.system('hugo  -t jane')
+                
+            os.system('hugo -t jane')
             os.system('git add .')
-            msg='the new archive updatingdate {0})'.format(title)
+            msg='the new archive  {0})'.format(title)
             os.system('git commit -m "{0}" && git push origin blog'.format(msg))
         except Exception as e:
             print(e)
