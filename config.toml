@@ -15,6 +15,9 @@ disqusShortname = ""      # disqus_shortname
 googleAnalytics = ""      # UA-XXXXXXXX-X
 copyright = ""            # default: author.name ↓        # 默认为下面配置的author.name ↓
 
+# 换行
+[blackfriday]
+  extensions = ["hardLineBreak"]
 # language support # en / zh-cn / other... translations present in i18n/
 defaultContentLanguage = "en"           # Default language to use
 [languages.en]
