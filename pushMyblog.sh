@@ -23,11 +23,12 @@ geneNewArchives(){
 }
 
 pushTorepo(){
+  hugo -t jane # if using a theme, replace with `hugo -t <YOURTHEME>`
   git add .
   msg="the new archive updating. $(date)"
   git commit -m "$msg" && git push origin blog
   }
 
 
-geneNewArchives
+#geneNewArchives
 pushTorepo
